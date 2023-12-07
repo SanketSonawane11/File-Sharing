@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import gsap from 'gsap'
 import PlayArea from './Components/PlayArea'
-// import { Motion } from 'framer-motion'
+
 
 
 export default function App() {

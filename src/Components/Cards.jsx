@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MdMenuBook } from "react-icons/md";
 import { TiDownloadOutline } from "react-icons/ti";
 import { CgClose } from "react-icons/cg";
-// import ReactTooltip from 'react-tooltip';
+import { motion } from 'framer-motion'
 
 
 
@@ -11,16 +11,33 @@ function Cards({data}) {
     const [download, setDownload] = useState(data.downloading);
     const [progressBar, setProgressBar] = useState(data.tag.show);
 
-    const changeState = () =>
-    {
-        setDownload(!download);
-        if(download)    setProgressBar(true);
-        else    setProgressBar(false);
+    // setProgressBar(download);
+
+    // const changeState = () =>
+    // {
+    //     setDownload(!download);
+    //     setProgressBar(!download);
+    // }
+
+    const changeState = () => {
+
+        setDownload(prevDownload => !prevDownload);
     }
+    
+    useEffect(() => {
+
+        setProgressBar(!download);
+    }, [download]);
+    
+
+    useEffect(() => {
+        setProgressBar(!download);
+    }, []);
+    
 
   return (
 
-        <div className='card'>
+        <motion.div className='card'>
 
             <MdMenuBook/>
 
@@ -44,14 +61,14 @@ function Cards({data}) {
 
                 <div className='pb'>
 
-                    {progressBar && <div className='progressBar'> {data.tag.tagTitle} </div>}
+                    {progressBar ? <div className='progressBar'> {data.tag.tagTitle} </div> : <div className='progressBar hidden'> Progress Bar appears here </div>}
 
                 </div>
 
 
             </footer>
 
-        </div>
+        </motion.div>
 
   )
 }
