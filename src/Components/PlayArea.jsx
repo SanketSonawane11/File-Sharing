@@ -1,7 +1,9 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Cards from './Cards'
 
 function PlayArea() {
+
+    const ref = useRef(null);
 
     const data = [
         {
@@ -40,11 +42,11 @@ function PlayArea() {
   return (
     <div className='playAreaMain'>
         
-        <div className='content'>
+        <div ref={ref} className='content'>
 
             {data.map((item, index) =>
             (
-                <Cards data = {item}/>
+                <Cards data = {item} referenceWindow = {ref}/>
             ))}
 
         </div>

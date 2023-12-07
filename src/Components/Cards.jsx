@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { MdMenuBook } from "react-icons/md";
-import { TiDownloadOutline } from "react-icons/ti";
+import { BsDownload } from "react-icons/bs";
 import { CgClose } from "react-icons/cg";
 import { motion } from 'framer-motion'
 
 
 
-function Cards({data}) {
+function Cards({data, referenceWindow}) {
 
     const [download, setDownload] = useState(data.downloading);
     const [progressBar, setProgressBar] = useState(data.tag.show);
@@ -37,7 +37,7 @@ function Cards({data}) {
 
   return (
 
-        <motion.div className='card'>
+        <motion.div drag dragConstraints={referenceWindow} className='card'>
 
             <MdMenuBook/>
 
@@ -54,7 +54,7 @@ function Cards({data}) {
 
                     <h6 className='sizeText'> {data.fileSize} </h6>
                     <button className='downloadLogo' onClick={changeState}> 
-                        {download ? <CgClose /> : <TiDownloadOutline size='1em'/>}
+                        {download ? <CgClose /> : <BsDownload size='1em'/>}
                     </button>
                     
                 </div>
