@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Alef:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* 
+{
+  font-family: 'Alef';
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main
+{
+  width: 100vw;
+  height: 100vh;
+  /* font-size: 5vw; */
+  background-color: #FF9398;
+  color: #ffffff;
+  /* letter-spacing: 0.2vw; */
+  overflow: hidden;
+}
+
+.navbar
+{
+  width: 100vw;
+  height: 4vw;
+  text-align: center;
+  font-size: 3vw;
+  font-weight: 800;
+  z-index: 2;
+  background-color: transparent;
+  position: absolute;
+}
+
+
+/* Play Area Styles */
+
+.playAreaMain
+{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+}
+
+.content
+{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+/* Cards Styles */
+
+.card
+{
+  width: 17vw;
+  height: 21vw;
+  background-color: #ffc5c5e0;
+  color: #000000;
+  border-radius: 2vw;
+  padding: 1.2vw;
+  margin: 0.4vw;
+  transition: all 0.2s ease-out;
+  position: relative;
+  overflow: hidden;
+  /* z-index: 10; */
+}
+
+/* .card:hover
+{
+  scale: 1.09;
+} */
+
+.cardText
+{
+  margin: 0.5vw 0;
+}
+
+.cardFooter
+{
+  position: absolute;
+  font-size: 1.3vw;
+  width: 100%;
+  height: 8vw;
+  border-radius: 0 0 2vw 2vw;
+  left: 0;
+  bottom: 0;
+}
+
+.footerText
+{
+  width: 100%;
+  height: 1.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4vw 1.2vw;
+  margin: 1vw 0;
+}
+
+.downloadLogo
+{
+  background-color: #ee7b7b68;
+  width: 5vw;
+  height: 2vw;
+  border-radius: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease-out;
+}
+
+.downloadLogo:hover
+{
+  color: #fff;
+  background-color: #3884f7;
+  scale: 1.05;
+}
+
+.progressBar
+{
+  width: 100%;
+  height: 4.5vw;
+  font-weight: 700;
+  background-color: #3884f7;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease-out;
+}
+
+.progressBar:hover
+{
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  background-color: #1270fc;
+  color: #fff;
+  font-size: 1.5vw;
+  font-weight: 600;
+}
+
+/* ----------------------------------------------------------------------------------- */
+/* Extras */
+
+
+::selection
+{
+  color: #6f2232;
+}
+
+body::-webkit-scrollbar
+{
+  display: none;
+}
