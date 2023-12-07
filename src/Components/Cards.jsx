@@ -37,7 +37,7 @@ function Cards({data, referenceWindow}) {
 
   return (
 
-        <motion.div drag dragConstraints={referenceWindow} className='card'>
+        <motion.div drag whileDrag={{scale: 1.1}} dragConstraints={referenceWindow} className='card'>
 
             <MdMenuBook/>
 
